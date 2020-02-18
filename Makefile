@@ -14,5 +14,5 @@ tag:
 		git commit -m "Update $(last_tag) to $(new_version)" -m "[skip ci]" && \
 		git remote add origin-pusher https://${GITHUB_OAUTH_TOKEN}@github.com/sparshadotel/releasemaker-tester.git && \
 		git tag $(new_version) && \
-		git push --tags origin-pusher HEAD 
+		git push origin-pusher HEAD 
 
