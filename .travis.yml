@@ -30,5 +30,6 @@ deploy:
   api_key: ${GITHUB_OAUTH_TOKEN}
   prerelease: true 
   skip_cleanup: true
+  file: ./**/*
   on:
     branch: master
