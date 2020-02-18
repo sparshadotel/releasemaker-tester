@@ -7,9 +7,12 @@ language: python
 Python:
   - "3.7"
 
-before_install:
+install:
   # require for installing pyodbc
-  - sudo apt-get install unixodbc-dev
+  - echo "Hello World"
+
+script:
+  - echo "Hello World"
 
 # command to setup datamegh
 before_deploy:
@@ -30,6 +33,5 @@ deploy:
   api_key: ${GITHUB_OAUTH_TOKEN}
   prerelease: true 
   skip_cleanup: true
-  file: ./**/*
   on:
     branch: master
