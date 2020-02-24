@@ -9,10 +9,10 @@ new_version := $(shell if [ "${TRAVIS_BRANCH}" = "master" ]; then echo "${new_ta
 
 tag:
 	@echo "Bump version :- $(last_tag) -> $(new_version)"
-	@sed -i "s/version.*=.*/version = '$(new_version)'/" __init__.py && \
+	@sed -i "s/version.*=.*/version = '$(new_version)'/" __init__.py  && \
 		git add __init__.py && \
 		git commit -m "Update $(last_tag) to $(new_version)" -m "[skip ci]" && \
-		git remote add origin-pusher https://${GITHUB_OAUTH_TOKEN}@github.com/sparshadotel/releasemaker-tester.git && \
+		git remote add origin-pusher https://${GITHUB_OAUTH_TOKEN}@github.com/sparshadotel/releasemaker-tester.git || true && \
 		git tag $(new_version) && \
 		git push origin-pusher HEAD 
 
